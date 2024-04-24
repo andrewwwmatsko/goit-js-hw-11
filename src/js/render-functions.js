@@ -35,10 +35,9 @@ export default function createMarkup(fetchedData) {
 
   listOfImages.insertAdjacentHTML('beforeend', markup);
 
-  const gallery = document.querySelector('gallery');
-
   var lightbox = new SimpleLightbox('.gallery a', {
-    /* options */
+    captionsData: 'title',
+    captionDelay: 350,
   });
-  listOfImages.refresh();
+  lightbox.refresh();
 }
