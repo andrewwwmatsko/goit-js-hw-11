@@ -26,6 +26,7 @@ body {
   border-radius: 4px;
   border: 1px solid #808080;
   transition: border 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  padding: 8px 16px;
 }
 
 .search-input:hover {
@@ -57,4 +58,20 @@ body {
 
 .submit-btn:hover {
   background: #6c8cff;
+}
+
+.iziToast-wrapper.iziToast-wrapper-topRight .search-404 {
+  color: #fafafb;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  letter-spacing: 0.5px;
+  padding: 20px;
+  width: 432px;
+}
+
+.iziToast-texts .iziToast-message.slideIn {
+  width: 322px;
 }
