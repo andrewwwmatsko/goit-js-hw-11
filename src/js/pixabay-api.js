@@ -11,7 +11,6 @@ export default function fetchImages(searchValue) {
   const options = {
     headers: {
       Accept: 'text/html',
-      'Content-Type': 'application/json',
     },
   };
 
