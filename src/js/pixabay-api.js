@@ -3,6 +3,8 @@ import 'izitoast/dist/css/iziToast.min.css';
 
 import icon from '../img/error-icon.svg';
 
+import createMarkup from './render-functions';
+
 export default function fetchImages(searchValue) {
   const authKey = '43558017-e13ccc47d2aef7f917b5afe22';
   const searchParams = new URLSearchParams({
@@ -28,11 +30,13 @@ export default function fetchImages(searchValue) {
     })
     .then(data => {
       if (data.total === 0) {
+        const images = document.querySelector('#images');
+        images.innerHTML = '';
+
         iziToast.show({
           class: 'search-404',
           message:
             'Sorry, there are no images matching your search query. Please, try again!',
-          // messageColor: '#fafafb',
           position: 'topRight',
           iconUrl: icon,
           backgroundColor: '#EF4040',
@@ -43,7 +47,8 @@ export default function fetchImages(searchValue) {
         });
         return;
       }
-      console.log(data);
+      // console.log(data);
+      createMarkup(data);
     })
     .catch(error => console.log(error));
 }
