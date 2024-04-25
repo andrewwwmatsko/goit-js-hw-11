@@ -14,7 +14,7 @@ export default function fetchImages(searchValue) {
     orientation: 'horizontal',
     safesearch: true,
   });
-  const URL = `https://pixabay.com/api?${searchParams}`;
+  const URL = `https://pixabay.com/api/?${searchParams}`;
   const options = {
     headers: {
       Accept: 'text/html',
