@@ -6,6 +6,13 @@ import icon from '../img/error-icon.svg';
 import createMarkup from './render-functions';
 
 export default function fetchImages(searchValue) {
+  const listOfImages = document.querySelector('#images');
+  listOfImages.innerHTML = '';
+  // loader on
+  const loader = document.querySelector('.loader');
+  loader.style.display = 'block';
+
+  // fetch options
   const authKey = '43558017-e13ccc47d2aef7f917b5afe22';
   const searchParams = new URLSearchParams({
     key: authKey,
@@ -21,6 +28,7 @@ export default function fetchImages(searchValue) {
     },
   };
 
+  //fetch
   return fetch(URL, options)
     .then(response => {
       if (!response.ok) {
@@ -45,10 +53,18 @@ export default function fetchImages(searchValue) {
           theme: 'dark',
           closeOnClick: true,
         });
+
+        //fetch off
+        loader.style.display = 'none';
         return;
       }
-      // console.log(data);
+
+      //markup
       createMarkup(data);
+      loader.style.display = 'none';
     })
-    .catch(error => console.log(error));
+    .catch(error => {
+      loader.style.display = 'none';
+      console.log(error.message);
+    });
 }
