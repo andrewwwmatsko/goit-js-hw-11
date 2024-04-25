@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: Montserrat;
+  font-family: sans-serif;
   font-size: 16px;
   margin: 0;
 }
@@ -12,7 +12,12 @@ body {
 
 img {
   display: block;
+  width: 100%;
   max-width: 100%;
+
+  object-fit: cover;
+
+  height: 100%;
 }
 
 ul {
@@ -100,8 +105,9 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 32px;
-  margin-top: 4px;
+  padding: 8px;
+  gap: 24px;
+  background-color: #fff;
 }
 
 .images-image {
@@ -113,18 +119,17 @@ ul {
 }
 
 .image-heading {
-  color: #2e2f42;
-  font-family: Montserrat;
-  font-size: 17px;
+  color: #2e2f42c8;
+  font-size: 14px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.48px;
+  text-align: center;
 }
 
 .image-description {
   color: #2e2f42;
-  font-family: Montserrat;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 2;
   letter-spacing: 0.04em;
   text-align: center;
@@ -168,4 +173,9 @@ ul {
 .simple-lightbox div.sl-counter,
 .simple-lightbox button.sl-close {
   color: #fff;
+}
+
+.gallery {
+  width: 358px;
+  height: 200px;
 }
